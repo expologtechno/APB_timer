@@ -13,24 +13,13 @@ module tb_top;
   always #5 pclk = ~pclk;
   always #5 pclkg = ~pclkg;
 	
- initial begin
-    intf_h.presetn=0;
-    #50;
-    intf_h.presetn=1;
-
-    if ($test$plusargs("TOGGLE_RESET"))begin
-	    #2;
-    intf_h.presetn=0;
-    #10;
-    intf_h.presetn=1;
-    end
- end
+ 
 
   apb_intf    intf_h( pclk );
 
   //-------------------- dut_instantiation --------------------
  cmsdk_apb_timer dut (
- 			.PCLK		(intf_h.pclk),		
+ 			.PCLK		(pclk),		
 			.PCLKG		(intf_h.pclkg),
 			.PRESETn		(intf_h.presetn),
 			.PSEL		(intf_h.psel),
