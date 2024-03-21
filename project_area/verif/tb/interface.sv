@@ -1,8 +1,9 @@
 //----------------------------------------INTERFACE-----------------------
 
-interface apb_intf(input bit pclk);
+interface apb_intf(input bit pclkg);
 	
-logic pclkg;
+//logic pclkg;
+logic pclk;
 logic presetn;
 logic psel ;	
 logic [11:2] paddr;
@@ -18,10 +19,8 @@ logic timerint;
 	
 //------------------driver_cb-----------------
 	
-clocking drv_cb @(posedge pclk);
+clocking drv_cb @(posedge pclkg);
 	default input #0 output #0;
-output pclk;
-output pclkg;
 output presetn;
 output psel ;	
 output paddr;
@@ -38,10 +37,8 @@ endclocking
 
 
 //-----------------mon_cb-------------------
-clocking mon_cb@(posedge pclk);
+clocking mon_cb@(posedge pclkg);
 	default input #1 output #1;
-input pclk;
-input pclkg;
 input presetn;
 input psel ;	
 input paddr;
