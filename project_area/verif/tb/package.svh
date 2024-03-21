@@ -7,6 +7,11 @@
 `include "../agent/apb_agent/apb_agent.sv"
 
 
+`include "../agent/reset_agent/reset_tx.sv"
+`include "../agent/reset_agent/reset_driver.sv"
+`include "../agent/reset_agent/reset_sequencer.sv"
+`include "../agent/reset_agent/reset_agent.sv"
+
 `include "../agent/passive_agent/output_tx.sv"
 `include "../agent/passive_agent/output_monitor.sv"
 `include "../agent/passive_agent/output_agent.sv"
