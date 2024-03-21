@@ -3,9 +3,10 @@ class apb_transaction extends uvm_sequence_item;
 	`uvm_object_utils(apb_transaction)
 
 
-	rand bit psel ;	
+//	 bit presetn ;	
+	 bit psel ;	
 	rand bit [11:2] paddr;
-	rand bit penable;
+	 bit penable;
 	rand bit pwrite ;
 	rand bit [31:0] pwdata;
 	rand bit [3:0] ecorevnum;
